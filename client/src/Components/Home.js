@@ -16,7 +16,6 @@ const Home = ({tasks, setTasks, isModalOpen, setIsModalOpen}) => {
     var data
     async function getAllCounts(){
       data = await getCounts(token) 
-      console.log(data);
       setTasks(data)
     }
     getAllCounts()
