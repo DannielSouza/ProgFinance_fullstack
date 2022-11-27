@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BASE_URL = 'http://localhost:4000'
+const BASE_URL = 'https://daniel-project-finance.herokuapp.com'
 
 export default function api(){
   async function registerUser(user){
