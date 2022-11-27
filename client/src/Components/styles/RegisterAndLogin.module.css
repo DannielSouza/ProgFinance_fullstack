@@ -74,6 +74,19 @@
     width: 90px;
     font-size: .8rem;
   }
+
+  .footerDiv p{
+    display: flex;
+    font-size: .7rem;
+    align-items: center;
+    color: white;
+  }
+  
+  .footerDiv span{
+    margin-left: .2rem;
+    font-size: .7rem;
+    color: #260036;
+  }
 }
 
 
@@ -86,13 +99,14 @@
 
 .footerDiv p{
   display: flex;
-  font-size: .7rem;
+  font-size: .9rem;
   align-items: center;
   color: white;
 }
 
 .footerDiv span{
   margin-left: .2rem;
-  font-size: .7rem;
+  font-size: .9rem;
   color: #260036;
+  cursor: pointer;
 }
