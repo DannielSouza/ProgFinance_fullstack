@@ -53,5 +53,18 @@ export default function api(){
   }
 
 
-  return {registerUser, loginUser, checkUser, createCount, getCounts}
+
+  async function deleteCount(token, id){
+    const response = await axios.delete(`${BASE_URL}/count/delete/${id}`,{
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    })
+    const data = await response.data
+
+    return data
+  }
+
+
+  return {registerUser, loginUser, checkUser, createCount, getCounts, deleteCount}
 }

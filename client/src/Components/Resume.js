@@ -7,7 +7,6 @@ const Resume = ({tasks}) => {
   let saidas = 0
 
   if(tasks){
-    console.log(tasks)
   tasks.forEach(element => {
     if(element.type === 'entrada')total = total + Number(element.value)
     if(element.type === 'saida')total = total - Number(element.value)

@@ -1,29 +1,18 @@
 import React from 'react'
 import style from './styles/Item.module.css'
 import trash from '../assets/delete.png'
+import api from '../helpers/api'
 
-const Item = ({task , tasks, setTasks}) => {
+const Item = ({task, setUpdateCounts}) => {
   const {id, title, type, value, date} = task
+  const {deleteCount} = api()
+  const token = JSON.parse(localStorage.getItem('token'))
 
-  function deleteItem({target}){
-    let thisItem
-
+  async function deleteItem(){
     let question = window.confirm("Deseja excluir o item?")
     if(question){
-      tasks.forEach((task)=>{
-        if(task.id === target.id){
-          thisItem =  tasks.indexOf(task)
-        }
-      })
-
-      tasks.splice(thisItem, 1)
-      if(tasks.length === 0){
-        window.localStorage.setItem('tasks', null)
-        document.location.reload()
-      }
-      setTasks(tasks)
-      window.localStorage.setItem('tasks', JSON.stringify(tasks))
-      document.location.reload()
+      await deleteCount(token, id)
+      setUpdateCounts((prev)=> prev+1)
     }
     else{
       return

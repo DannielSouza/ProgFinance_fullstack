@@ -3,7 +3,7 @@ import style from './styles/InputField.module.css'
 import close from '../assets/close.png'
 import api from '../helpers/api'
 
-const InputField = ({tasks, setTasks, setIsModalOpen, setUpdateCounts}) => {
+const InputField = ({setIsModalOpen, updateCounts ,setUpdateCounts}) => {
   const [desc, setDesc] = React.useState('')
   const [value, setValue] = React.useState('')
   const [select, setSelect] = React.useState('')
@@ -44,7 +44,7 @@ const InputField = ({tasks, setTasks, setIsModalOpen, setUpdateCounts}) => {
     setSelect('')
     setOutType('')
     setDate('')
-    setUpdateCounts((prev)=>prev+1)
+    setUpdateCounts((prev)=> prev+1)
     setIsModalOpen(false)
   }
 

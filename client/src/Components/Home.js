@@ -13,8 +13,10 @@ const Home = ({tasks, setTasks, isModalOpen, setIsModalOpen}) => {
   const [updateCounts, setUpdateCounts] = React.useState(0)
 
   React.useEffect(()=>{
+    var data
     async function getAllCounts(){
-      const data = await getCounts(token)
+      data = await getCounts(token) 
+      console.log(data);
       setTasks(data)
     }
     getAllCounts()
@@ -30,11 +32,11 @@ const Home = ({tasks, setTasks, isModalOpen, setIsModalOpen}) => {
           {tasks && tasks.sort((a,b)=>{
             return  Number(b.timestamp) - Number(a.timestamp)
           }).map((task)=>{
-            return <Item key={task.id} id={task.id} task={task} tasks={tasks} setTasks={setTasks}/>
+            return <Item setUpdateCounts={setUpdateCounts} key={task.id} id={task.id} task={task}/>
           })}
         </ul>
 
-      {isModalOpen && <InputField setUpdateCounts={setUpdateCounts} tasks={tasks} setTasks={setTasks} setIsModalOpen={setIsModalOpen}/>}
+      {isModalOpen && <InputField updateCounts={updateCounts} setUpdateCounts={setUpdateCounts} setIsModalOpen={setIsModalOpen}/>}
     </>
   )
 }
