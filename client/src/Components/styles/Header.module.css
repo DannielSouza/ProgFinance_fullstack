@@ -1,0 +1,67 @@
+.header{
+  width: 100vw;
+  height: 160px;
+  background: #633974;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.container{
+  width: 600px;
+}
+
+@media (max-width: 600px){
+  .header{
+    height: 135px;
+  }
+  .header h1{
+    font-size: 1.5em;
+    padding: .35rem 0;
+  }
+  .container{
+    margin-left: 1rem;
+  }
+}
+
+.noLogged{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(155deg, #7D3C98, #BB8FCE);
+}
+
+
+.noLogged h3{
+  text-align: center;
+  margin: 2rem 0;
+  color: white;
+}
+
+.logoutButton{
+  position: absolute;
+  height: 30px;
+  width: 70px;
+
+  margin-top: 12px;
+  margin-left: 14rem;
+
+  background: white;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .7);
+  cursor: pointer;
+  transition: .3s;
+}
+
+
+.logoutButton:hover{
+  background: #E74C3C;
+  color: white;
+}

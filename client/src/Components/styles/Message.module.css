@@ -1,0 +1,35 @@
+.alertContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  background: #E74C3C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: animaMessage 3s ease-in-out forwards
+}
+
+@keyframes animaMessage {
+  0%{
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  5%{
+    transform: initial;
+    opacity: initial;
+  }
+  90%{
+    transform: initial;
+    opacity: initial;
+  }
+  100%{
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+.alertContainer p{
+  color: white;
+}

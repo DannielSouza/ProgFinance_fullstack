@@ -1,0 +1,147 @@
+.container{
+  animation: slideRight .6s forwards;
+  overflow-x: hidden;
+}
+
+.graphItem{
+  position: relative;
+}
+
+@keyframes slideRight{
+  from{
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to{
+    transform: initial;
+    opacity: initial;
+  }
+}
+
+.select{
+  display: grid;
+  font-size:1.5em;
+  color: #633974;
+  border:  1px solid;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align:center;
+  margin-top:.5em;
+}
+
+.container h1{
+  font-size:2.5em;
+  color: rgba(0,0,0, .7);
+  margin: 0 auto;
+  text-align:center;
+  border-bottom: 2px solid;
+  width: 5em;
+  margin-top:.5em;
+}
+
+.graphContainer h3{
+  color: rgba(0,0,0, .6);
+  text-align:center;
+}
+
+.graphContainer{
+  overflow-x: hidden;
+  max-width:90vw;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content:  space-between;
+  overflow-x: hidden;
+  margin-top:2.5rem;
+}
+
+.mainGraph{
+  overflow-x: hidden;
+  width:450px;
+  height:450px;
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.monthGraph{
+  width: 600px;
+  height: 500px;
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.buttonHome{
+  position: fixed !important;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background: #633974;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.buttonHome img{
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width:880px){
+  .graphContainer{
+    display:grid;
+    grid-template-columns:1fr;
+    gap: 0rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainGraph{
+    margin:0;
+    width: 400px;
+    height: 300px;
+  }
+  .monthGraph{
+    width: 500px;
+    height: 400px;
+    margin:0;
+  }
+  .graphItem{
+    display:grid;
+    margin: 0 auto;
+    width:500px;
+    justify-content: center;
+    align-items:center;
+    overflow: hidden;
+    left: 30%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width:500px){
+  .mainGraph{
+    margin:0;
+    width: 350px;
+    height: 250px;
+  }
+  .monthGraph{
+    width: 350px;
+    height: 300px;
+    margin:0;
+  }
+  .graphItem{
+    display:grid;
+    margin: 0 auto;
+    position: relative;
+    left: 48%;
+    transform: translateX(-50%);
+    width:450px;
+    justify-content: center;
+    align-items:center;
+  }
+}

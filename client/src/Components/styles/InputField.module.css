@@ -1,0 +1,166 @@
+.mainContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.container{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #633974;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5rem 0 5rem 5rem;
+  gap: 2rem;
+  width: 35%;
+  height: 70%;
+  animation: appear .3s forwards;
+}
+
+.dateContainer{
+  display: flex;
+}
+
+@keyframes appear {
+  from{
+    width: 50%;
+    opacity: 0;
+  }
+  to{
+    width: width;
+    opacity: initial;
+  }
+}
+
+#closeModal{
+  position: absolute;
+  background: #633974;
+  padding: .4rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  top: -20px;
+  right: -20px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#closeModal:hover{
+  background: #76448A;
+}
+
+.input,
+.select,
+.button,
+.selectOut,
+.date{
+  width: 20rem;  
+  height: 2rem;
+  padding: 0 .5rem;
+  border-radius: 5rem;
+  outline: none;
+  margin: 0 .5rem;
+  border: 2px solid white;
+}
+
+.date{
+  position: relative;
+}
+
+.select, .selectOut, .date{
+  border-radius: 5rem  0 0 5rem;
+}
+
+.selectOut{
+  animation: animeDown .5s forwards;
+}
+
+@keyframes animeDown{
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to{
+    transform: initial;
+    opacity: initial;
+  }
+}
+
+.input:focus,
+.select:focus,
+.button:focus,
+.selectOut:focus,
+.date:focus{
+  border: 2px solid #C39BD3;
+}
+
+.button{
+  width: 7rem;
+  background: white;
+  transition: .3s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover{
+  background: #76448A;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 1000px){
+  .container{
+    width: 50%;
+  }
+}
+
+@media (max-width: 800px){
+  .container{
+    width: 70%;
+  }
+  .date::after{
+    position: absolute;
+    content: '';
+    right: 1rem;
+    width: 17px;
+    height: 17px;
+    background: url('../../assets/calendar.png');
+    background-size: cover;
+  }
+}
+
+@media (max-width: 550px){
+  .container{
+    width: 75%;
+  }
+  .input,.select, .button, .selectOut, .date{
+    width: 16rem;
+  }
+  .button{
+    width: 5.5rem;
+  }
+}
+
+@media (max-width: 550px){
+  .container{
+    width: 75%;
+  }
+  .input,.select, .button, .selectOut, .date{
+    width: 15rem;
+  }
+  .button{
+    width: 4.5rem;
+  }
+}
