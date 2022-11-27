@@ -4,7 +4,7 @@ import { context } from '../context/UserContext'
 import Message from './Message'
 
 
-const Login = () => {
+const Login = ({setLoginOrRegister}) => {
   const {login} = React.useContext(context)
 
   const [email, setEmail] = React.useState('')
@@ -38,7 +38,11 @@ const Login = () => {
       <label className={style.label} htmlFor='loginPassword'>Senha</label>
       <input autoComplete="off" className={style.input} id='loginPassword' placeholder='*******' type='password' value={password} onChange={({target})=>setPassword(target.value)}/>
 
-      {loading? <button disabled className={style.button}>Carregando</button> : <button className={style.button}>Entrar</button>}
+      <div className={style.footerDiv}>
+        {loading? <button disabled className={style.button}>Carregando</button> : <button className={style.button}>Entrar</button>}
+        <p>Não possui conta? <span onClick={()=>setLoginOrRegister(false)}>Registre-se</span></p>
+      </div>
+
     </form>
     </>
   )

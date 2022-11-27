@@ -4,7 +4,7 @@ import Message from './Message'
 import style from './styles/RegisterAndLogin.module.css'
 
 
-const Register = () => {
+const Register = ({setLoginOrRegister}) => {
   const {register} = React.useContext(context)
   const [user, setUser] = React.useState()
   const [error, setError] = React.useState()
@@ -43,8 +43,10 @@ const Register = () => {
       <label className={style.label} htmlFor='confirmpassword'>Confirmação de senha</label>
       <input className={style.input} id='confirmpassword' placeholder='*******' type='password' onChange={userChange} />
 
-
+      <div className={style.footerDiv}>
       {loading? <button disabled className={style.button}>Carregando</button> : <button className={style.button}>Cadastrar</button>}
+      <p>Já possui conta? <span onClick={()=>setLoginOrRegister(true)}>Entrar</span></p>
+      </div>
 
     </form>
     </>

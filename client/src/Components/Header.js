@@ -1,6 +1,7 @@
 import React from 'react'
 import { context } from '../context/UserContext'
 import Login from './Login'
+import LogScreen from './LogScreen'
 import Message from './Message'
 import Register from './Register'
 import Resume from './Resume'
@@ -33,10 +34,9 @@ const Header = ({tasks, setTasks, user, setLogin}) => {
   return(
     <div className={style.noLogged}>
       {message && <Message message={message}/>}
-
-      <Register />
-        <h3>Já possui conta?</h3>
-      <Login />
+      
+      <LogScreen/>
+      
     </div>
   )
 }
